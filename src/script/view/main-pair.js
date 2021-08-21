@@ -13,15 +13,16 @@ const mainPair = function () {
         searchElement.value[1],
         searchElement.value[2]
       );
-      renderResult(results);
+      const amount = searchElement.value[2];
+      renderResult(results, amount);
     } catch (error) {
       fallbackResult(error);
     }
   };
 
-  const renderResult = (results) => {
+  const renderResult = (results, amount) => {
     cardElement.data = results;
-    cardElement.amount = searchElement.value[2].toLocaleString();
+    cardElement.amount = amount;
   };
 
   const fallbackResult = (message) => {

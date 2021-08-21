@@ -13,7 +13,7 @@ class CardPair extends HTMLElement {
   }
 
   set amount(amount) {
-    this._amount = amount;
+    this._amount = parseInt(amount).toLocaleString();
     this.render();
   }
 
