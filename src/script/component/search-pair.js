@@ -52,7 +52,7 @@ class SearchPair extends HTMLElement {
               color: white;
               background-color: #53b8bb;
               padding: 2vw 2vw;
-              width: 23%;
+              width: 20%;
               margin-right: 10px;
               height: 2.5rem;
             
