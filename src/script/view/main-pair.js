@@ -21,7 +21,7 @@ const mainPair = function () {
 
   const renderResult = (results) => {
     cardElement.data = results;
-    cardElement.amount = searchElement.value[2];
+    cardElement.amount = searchElement.value[2].toLocaleString();
   };
 
   const fallbackResult = (message) => {

@@ -94,7 +94,7 @@ class CardPair extends HTMLElement {
         <p>${currencies_abr[0][this._data.base_code]}</p>
       </div>
       <div class="card-right">
-        <h1>${this._amount.toLocaleString()}</h1>
+        <h1>${this._amount}</h1>
       </div>
     </div>
 
