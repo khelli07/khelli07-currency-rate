@@ -1,27 +1,27 @@
 class SearchPair extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({ mode: "open" });
+  constructor () {
+    super()
+    this.shadowDOM = this.attachShadow({ mode: 'open' })
   }
 
-  connectedCallback() {
-    this.render();
+  connectedCallback () {
+    this.render()
   }
 
-  set clickEvent(event) {
-    this._clickEvent = event;
-    this.render();
+  set clickEvent (event) {
+    this._clickEvent = event
+    this.render()
   }
 
-  get value() {
+  get value () {
     return [
-      this.shadowDOM.querySelector("#searchBase").value,
-      this.shadowDOM.querySelector("#searchPair").value,
-      this.shadowDOM.querySelector("#searchAmount").value,
-    ];
+      this.shadowDOM.querySelector('#searchBase').value,
+      this.shadowDOM.querySelector('#searchPair').value,
+      this.shadowDOM.querySelector('#searchAmount').value
+    ]
   }
 
-  render() {
+  render () {
     this.shadowDOM.innerHTML = `
       <style>
             *{
@@ -137,12 +137,12 @@ class SearchPair extends HTMLElement {
         <button id="searchButtonElement" type="submit"></button>
       </div>
     </div>
-        `;
+        `
 
     this.shadowDOM
-      .querySelector("#searchButtonElement")
-      .addEventListener("click", this._clickEvent);
+      .querySelector('#searchButtonElement')
+      .addEventListener('click', this._clickEvent)
   }
 }
 
-customElements.define("search-pair", SearchPair);
+customElements.define('search-pair', SearchPair)

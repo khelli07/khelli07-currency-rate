@@ -1,29 +1,29 @@
-import "./card.js";
-import currencies_abr from "../data/data-name";
+import './card.js'
+import currencies_abr from '../data/data-name'
 
 class CardAllContainer extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({ mode: "open" });
+  constructor () {
+    super()
+    this.shadowDOM = this.attachShadow({ mode: 'open' })
   }
 
-  set currencies(currencies) {
-    this._currencies = currencies;
-    this.render();
+  set currencies (currencies) {
+    this._currencies = currencies
+    this.render()
   }
 
-  render() {
-    this.shadowDOM.innerHTML = "";
+  render () {
+    this.shadowDOM.innerHTML = ''
     for (const [key, value] of Object.entries(this._currencies)) {
-      const card = document.createElement("card-item");
-      card.currency = key;
-      card.currency_name = currencies_abr[0][key];
-      card.currency_rate = value;
-      this.shadowDOM.appendChild(card);
+      const card = document.createElement('card-item')
+      card.currency = key
+      card.currency_name = currencies_abr[0][key]
+      card.currency_rate = value
+      this.shadowDOM.appendChild(card)
     }
   }
 
-  renderError(message) {
+  renderError (message) {
     this.shadowDOM.innerHTML = `
     <style>
       .placeholder {
@@ -37,9 +37,9 @@ class CardAllContainer extends HTMLElement {
         -ms-user-select: none;
         user-select: none;
       }
-    </style>`;
-    this.shadowDOM.innerHTML += `<h2 class="placeholder"> ${message} </h2>`;
+    </style>`
+    this.shadowDOM.innerHTML += `<h2 class="placeholder"> ${message} </h2>`
   }
 }
 
-customElements.define("card-all-container", CardAllContainer);
+customElements.define('card-all-container', CardAllContainer)

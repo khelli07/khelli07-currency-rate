@@ -1,22 +1,20 @@
-import { TweenMax } from "gsap/gsap-core";
-
 class AppBar extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({ mode: "open" });
+  constructor () {
+    super()
+    this.shadowDOM = this.attachShadow({ mode: 'open' })
     // shadowDOM bebas namanya, bisa diganti shadowRoot
   }
 
-  connectedCallback() {
-    this.render();
+  connectedCallback () {
+    this.render()
   }
 
-  set clickEvent(event) {
-    this._clickEvent = event;
-    this.render();
+  set clickEvent (event) {
+    this._clickEvent = event
+    this.render()
   }
 
-  render() {
+  render () {
     this.shadowDOM.innerHTML = `
       <style>
           * {
@@ -169,15 +167,15 @@ class AppBar extends HTMLElement {
           <button class="hamburger hambefore"></button> 
       </nav>
       </div>
-      `;
+      `
 
-    const hamburger = this.shadowDOM.querySelector(".hamburger");
-    const navLinks = this.shadowDOM.querySelector(".nav-links");
-    this.shadowDOM.querySelector(".hamburger").addEventListener("click", () => {
-      navLinks.classList.toggle("open");
-      hamburger.classList.toggle("hamafter");
-    });
+    const hamburger = this.shadowDOM.querySelector('.hamburger')
+    const navLinks = this.shadowDOM.querySelector('.nav-links')
+    this.shadowDOM.querySelector('.hamburger').addEventListener('click', () => {
+      navLinks.classList.toggle('open')
+      hamburger.classList.toggle('hamafter')
+    })
   }
 }
 
-customElements.define("app-bar", AppBar);
+customElements.define('app-bar', AppBar)

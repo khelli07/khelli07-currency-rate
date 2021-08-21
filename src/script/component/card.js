@@ -1,25 +1,25 @@
 class Card extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({ mode: "open" });
+  constructor () {
+    super()
+    this.shadowDOM = this.attachShadow({ mode: 'open' })
   }
 
-  set currency(currency) {
-    this._currency = currency;
-    this.render();
+  set currency (currency) {
+    this._currency = currency
+    this.render()
   }
 
-  set currency_name(currency_name) {
-    this._currency_name = currency_name;
-    this.render();
+  set currency_name (currency_name) {
+    this._currency_name = currency_name
+    this.render()
   }
 
-  set currency_rate(currency_rate) {
-    this._currency_rate = currency_rate;
-    this.render();
+  set currency_rate (currency_rate) {
+    this._currency_rate = currency_rate
+    this.render()
   }
 
-  render() {
+  render () {
     this.shadowDOM.innerHTML = `
     <style>
         * {
@@ -82,8 +82,8 @@ class Card extends HTMLElement {
       </div>
     </div>
 
-    `;
+    `
   }
 }
 
-customElements.define("card-item", Card);
+customElements.define('card-item', Card)

@@ -1,23 +1,23 @@
-import "./card.js";
-import currencies_abr from "../data/data-name";
+import './card.js'
+import currencies_abr from '../data/data-name'
 
 class CardPair extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({ mode: "open" });
+  constructor () {
+    super()
+    this.shadowDOM = this.attachShadow({ mode: 'open' })
   }
 
-  set data(data) {
-    this._data = data;
-    this.render();
+  set data (data) {
+    this._data = data
+    this.render()
   }
 
-  set amount(amount) {
-    this._amount = parseInt(amount).toLocaleString();
-    this.render();
+  set amount (amount) {
+    this._amount = parseInt(amount).toLocaleString()
+    this.render()
   }
 
-  render() {
+  render () {
     this.shadowDOM.innerHTML = `
     <style>
         * {
@@ -108,10 +108,10 @@ class CardPair extends HTMLElement {
       </div>
     </div>
   </div>
-    `;
+    `
   }
 
-  renderError(message) {
+  renderError (message) {
     this.shadowDOM.innerHTML = `
     <style>
       .placeholder {
@@ -130,9 +130,9 @@ class CardPair extends HTMLElement {
           width:80%;
         }
       }
-    </style>`;
-    this.shadowDOM.innerHTML += `<h2 class="placeholder"> ${message} </h2>`;
+    </style>`
+    this.shadowDOM.innerHTML += `<h2 class="placeholder"> ${message} </h2>`
   }
 }
 
-customElements.define("card-pair", CardPair);
+customElements.define('card-pair', CardPair)
