@@ -52,11 +52,12 @@ class SearchPair extends HTMLElement {
               color: white;
               background-color: #53b8bb;
               padding: 2vw 2vw;
-              width: 28%;
+              width: 23%;
               margin-right: 10px;
               height: 2.5rem;
             
               margin-top: 1rem;
+              margin-left: 5px;
               border: none;
             
               font-size: 1rem;
@@ -108,8 +109,9 @@ class SearchPair extends HTMLElement {
       </style>
 
       <div class="form-input">
-      <div>
+      <div class="container">
         <label>Pair Currency<br /></label>
+        from
         <input
           placeholder="e.g IDR"
           id="searchBase"
@@ -117,6 +119,7 @@ class SearchPair extends HTMLElement {
           type="search"
           maxlength="3"
         />
+        to
         <input
           placeholder="e.g USD"
           id="searchPair"
